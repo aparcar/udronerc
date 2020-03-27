@@ -1,0 +1,38 @@
+name: Basic DHCP test
+id: basic_dhcp
+drones_min: 1
+drones_max: 1
+repeat: 2
+board: generic
+tasks:
+  - name: Sysinfo
+    sysinfo:
+
+  - name: Print resolv.conf
+    read_file:
+      path: /tmp/resolv.conf
+
+  - checkip:
+      interface: lan
+      check_ipv4: True
+  
+  - name: Set UCI configuration
+    uci_set:
+      data:
+        network:
+          wan:
+            proto: dhcp
+          lan:
+            gateway: 192.168.11.1
+            ipaddr: 192.168.11.11
+            netmask: 255.255.255.0
+            proto: static
+
+  - host_sleep:
+      seconds: 2
+
+  - name: Restart dhcp/network
+    service:
+      name: network
+      action: restart
+

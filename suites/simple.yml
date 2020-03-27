@@ -1,0 +1,9 @@
+name: Simple test
+id: basic_dhcp
+drones_min: 1
+drones_max: 1
+repeat: 0
+board: generic
+tasks:
+  - name: Get sysinfo
+    sysinfo:

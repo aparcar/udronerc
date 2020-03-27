@@ -1,0 +1,10 @@
+name: Basic repeat test
+id: basic_repeat
+repeat: 2
+tasks:
+  - host_sleep:
+      seconds: 2
+  - host_comment:
+      msg: "All Systems GO"
+  - host_raw:
+      cmd: "echo 'Hi'"

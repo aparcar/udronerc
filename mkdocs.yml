@@ -1,0 +1,10 @@
+site_name: udrone
+site_url: https://aparcar.github.io/udronerc/
+plugins:
+  - search
+  - mkdocstrings
+markdown_extensions:
+  - codehilite
+theme:
+  name: 'material'
+
