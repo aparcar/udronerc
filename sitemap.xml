@@ -8,11 +8,15 @@
      <lastmod>2020-04-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://test.de/reference/qa/</loc>
+     <loc>https://test.de/reference/dronegroup/</loc>
      <lastmod>2020-04-07</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://test.de/reference/udronerc/</loc>
+     <loc>https://test.de/reference/dronehost/</loc>
+     <lastmod>2020-04-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://test.de/reference/modules/checkip/</loc>
      <lastmod>2020-04-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
