@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://test.de/" rel="canonical"/>
+<link href="assets/images/favicon.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1, mkdocs-material-5.0.1" name="generator"/>
+<title>udrone</title>
+<link href="assets/stylesheets/main.c3000690.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#udrone-qa-done-right">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="udrone" class="md-header-nav__button md-logo" href="https://test.de" title="udrone">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z"></path></svg>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            udrone
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              udrone - QA done right
+            
+          </span>
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Type to start searching
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="udrone" class="md-nav__button md-logo" href="https://test.de" title="udrone">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z"></path></svg>
+</a>
+    udrone
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        udrone - QA done right
+        <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z"></path></svg>
+</span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="." title="udrone - QA done right">
+      udrone - QA done right
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup">
+    Setup
+  </a>
+<nav aria-label="Setup" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#where-do-i-get-udrone">
+    Where do I get udrone
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-do-i-setup-udrone-software">
+    How do I setup udrone software
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hardware-setup">
+    Hardware setup
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-tests">
+    Run tests
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#definition-of-test-cases">
+    Definition of test cases
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-iterations-and-substitution">
+    Using iterations and substitution
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-of-all-complex-calls">
+    List of all complex calls
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-of-all-drone-calls">
+    List of all drone calls
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<label class="md-nav__link" for="nav-2">
+      Development
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg>
+</span>
+</label>
+<nav aria-label="Development" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-2">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg>
+</span>
+        Development
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="development/setup/" title="Test setup">
+      Test setup
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      Reference
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg>
+</span>
+</label>
+<nav aria-label="Reference" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg>
+</span>
+        Reference
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="reference/qa/" title="Qa">
+      Qa
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="reference/udronerc/" title="Udronerc">
+      Udronerc
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setup">
+    Setup
+  </a>
+<nav aria-label="Setup" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#where-do-i-get-udrone">
+    Where do I get udrone
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-do-i-setup-udrone-software">
+    How do I setup udrone software
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hardware-setup">
+    Hardware setup
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-tests">
+    Run tests
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#definition-of-test-cases">
+    Definition of test cases
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-iterations-and-substitution">
+    Using iterations and substitution
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-of-all-complex-calls">
+    List of all complex calls
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-of-all-drone-calls">
+    List of all drone calls
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<h1 id="udrone-qa-done-right">udrone - QA done right</h1>
+<p>Udrone is a system that allows you to remotely control <em>N</em> drones. The <em>N</em>
+drones can be sent a number of different commands. Based on these commands the
+drone will perform a number of actions and report the result back to the drone
+host controller. The system consists of a number of files on the controller
+side.</p>
+<ul>
+<li><code>udronerc.py</code> - the core component. This code establishes a communication channel to the drone.</li>
+<li><code>qa.py</code> - this is a wrapper for udrone.py that allows us to write test in json syntax and run them in a sane manner</li>
+<li><code>*.yml</code> - this is a collection of predefined tests, that the drone can run</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<p>The following steps explain how to setup an <code>udrone</code> environment.</p>
+<h3 id="where-do-i-get-udrone">Where do I get udrone</h3>
+<p>Checkout the latest version via the following command</p>
+<pre><code>$ git clone https://github.com/blogic/udrone
+</code></pre>
+<h3 id="how-do-i-setup-udrone-software">How do I setup udrone software</h3>
+<p>udrone is easy to setup. All custom information is stored in a central
+file called <code>config.py</code></p>
+<pre><code>$ cat config.py
+ifname:  eth0 # the interface used to talk to the drones
+</code></pre>
+<h3 id="hardware-setup">Hardware setup</h3>
+<p>In addition to the <em>device under testing</em> (DUT) you will need N drones. A drone
+is a OpenWrt router with the udrone package installed. Once you have all
+devices, you need to set them up in 1 of the following ways.</p>
+<pre><code>LAPTOP (eth0) -&gt; (LAN) DRONE (WAN) -&gt; (LAN) DUT (WAN) -&gt; BACKEND
+LAPTOP (eth0) -&gt; (LAN) DRONE (WIFI) -&gt; (WIFI) DUT (WAN) -&gt; BACKEND
+</code></pre>
+<p>If you want to use more than just 1 Drone you will need to switches between
+<code>LAPTOP/DRONE</code> and <code>DRONE/DUT</code>.</p>
+<p>As a backend you will need, depending on the test: AP/PPPoE Server/DHCP/DNS/...</p>
+<h2 id="run-tests">Run tests</h2>
+<p>The simplest test is the connectivity test. This will make the drone grab an
+IPV4 using DHCP from the DUT and wget <a href="http://openwrt.org/index.html">http://openwrt.org/index.html</a>.</p>
+<pre><code>$ ./qa.py test/connectivity.yml
+</code></pre>
+<p>Once all test are run, the qa tool will report back if the test passed or
+failed.</p>
+<h2 id="definition-of-test-cases">Definition of test cases</h2>
+<p>So, lets start by looking at the format of the json file. The basic layout of
+any json based test description is as follows</p>
+<pre><code>{
+    "id":"The ID of the test",
+    "desc":"The description of the test",
+    "drones":the_number_of_drones,
+    "test":[ the actual test case go here ],
+}
+</code></pre>
+<p>Within the test:[] entity we will start to define all the different test cases
+that want to run as part of this test. A typical testcase would look like this</p>
+<pre><code>{
+    "desc":"use fatserver calls to set public_essid)",
+    "repeat":how_often_we_want_to_run_the_test,
+    "first":loop_from_first,
+    "last":loop_to_last,
+    "sleep":how_many_seconds_to_sleep_after_the_test,
+    "cmd":[ the actual commands to be called go here ],
+}
+</code></pre>
+<p>If last/first is set, repeat will be ignored.</p>
+<p>Within the cmd:[] entity we define the actual real commands that we want the
+drone to execute as part of the test. Consider these to be a reduced to the
+smallest denominator of commands called (or in other terms, these are risc
+commands and not cisc). The command can have a verity of functions, from
+setting local and remote network settings, doing a generic sleep, talking to
+the DUT, doing random networkery, ...</p>
+<p>Lets start by looking at a single row</p>
+<pre><code>[ "ACTION", .................. ]
+</code></pre>
+<p>Every line start with a ACTION. Depending on the real ACTION to take, we can
+have N parameters following the ACTON call.</p>
+<p>Actions can be of 3 types. So lets look at 3 lines</p>
+<pre><code>{
+    [ "sleep", 5 ],
+    [ "drone", 1, "webui_auth", {"pass":"foobar"}, 300 ],
+    [ "essid", 1, "foorandom", "12345321234" ],
+}
+</code></pre>
+<ul>
+<li>
+<p>sleep - sleep</p>
+<pre><code># this makes the system wait 5 seconds
+[ "sleep", 5 ]
+</code></pre>
+</li>
+<li>
+<p>drone - send commands to drone</p>
+</li>
+</ul>
+<hr/>
+<pre><code>    # we want to send a command to a drone, whose id is 1, the commands id is
+    # "webui_auth" and we pass the payload {"pass":"foobar"}. if the call fails
+    # to return within 300s, we raise a failure/exception
+    [ "drone", 1, "webui_auth", {"pass":"foobar"}, 300 ],
+
+</code></pre>
+<ul>
+<li>$complex - when ACTIONS become to complex to be handled by the "drone" call,
+    we can add additional handlers inside qa.py to abstract the complexion away
+    abit.<pre><code># run the complex command essid. this sets the essid of drone 1 to
+# foorandom and uses 12345321234 as a passphrase this call is complex as we
+# don't only send a command, but 2 and then poll for their completion.
+# Completion is detected by polling the network status reporting info from
+# the DUT
+[ "essid", 1, "foorandom", "12345321234" ]
+</code></pre>
+</li>
+</ul>
+<p>All complex functions are located inside qa.py</p>
+<p>A full test would look like this:</p>
+<pre><code>{
+    "id":"test123",
+    "desc":"A demo testcase.",
+    "drones":1,
+    "test":
+    [
+        {
+            "desc":"log into webui and set essid",
+            "repeat":1,
+            "sleep":1,
+            "cmd":
+            [
+                {
+                    [ "sleep", 5 ],
+                    [ "drone", 1, "webui_auth", {"pass":"foobar"}, 300 ],
+                    [ "essid", 1, "foorandom", "12345321234" ],
+                }
+            ],
+        },
+    ],
+}
+</code></pre>
+<h2 id="using-iterations-and-substitution">Using iterations and substitution</h2>
+<p>As described above a test set can be repeated N times (repeat: 4). To reflect
+the N iterations within the test we can use variable substitution. To do so,
+simply place <code>$iterate</code> inside any parameter section and it will get magically
+replaced by the backend. A simple iteration example would look like this.</p>
+<pre><code>{
+    "id":"example.iterate",
+    "desc":"Demo of how iterate works",
+    "drones":1,
+    "test":[
+        {"desc":"repeat example",
+        "repeat":4,
+        "sleep":2,
+        "cmd":[ [ "comment", "Iteration $iterate" ] ]
+        }
+    ]
+}
+
+
+--&gt;
+RUN "iterate" - iteration 1
+COMMENT Iteration 1
+RUN "iterate" - iteration 2
+COMMENT Iteration 2
+RUN "iterate" - iteration 3
+COMMENT Iteration 3
+RUN "iterate" - iteration 4
+COMMENT Iteration 4
+
+{
+    "id":"example.iterate",
+    "desc":"Demo of how iterate works",
+    "drones":1,
+    "test":[
+        {"desc":"first-&gt;last example",
+        "first":4,
+        "last":"6,
+        "sleep":2,
+        "cmd":[ [ "comment", "Iteration $iterate" ] ]
+        }
+    ]
+}
+
+--&gt;
+RUN "iterate" - iteration 4
+COMMENT Iteration 4
+RUN "iterate" - iteration 5
+COMMENT Iteration 5
+RUN "iterate" - iteration 6
+COMMENT Iteration 6
+</code></pre>
+<p>In addition we can use variable substation. To do so simply create a new value
+inside conf.py and then reference it inside your json code</p>
+<pre><code>[ "drone", 1, "cloudlogin", {"user":"$cloud_user", "pass":"$cloud_pass", "host":"$cloud_url"}, 300 ]
+</code></pre>
+<h2 id="list-of-all-complex-calls">List of all complex calls</h2>
+<p>Generally we use complex calls whenever we need to not just send data but wait
+for a status.</p>
+<pre><code># set a static IP on drone 1
+[ "static", 1, "192.168.10.2", "255.255.255.0" ]
+
+# set essid of drone 1 to wifitest and wpa key to foobar
+[ "essid", 1, "wifitest", "foobar" ]
+
+# trigger drone 1
+[ "dhcp", 1 ]
+
+# sleep 5 seconds
+[ "sleep", 1 ]
+
+# fail is a test result inverter. it switces a result true&lt;-&gt;false
+[ "fail", "dhcp", 1 ]
+
+# this will trigger qa.py to print a comment in the log
+[ "comment", "foooooobar" ]
+
+# this will cause drone 1 to try and ping a remote url
+[ "ping", 1, "192.168.10.1" ]
+
+# this will check if the IP received in a dhcp reply received by drone 1
+# matches certain criterions.
+[ "checkip", 1, "192.168.10." ]
+</code></pre>
+<p>As netmasks are limited to 32 and or not always obvious which once are valid,
+we have 2 special complex calls to handle this. Netmasks are always indexed by
+an id rather than a absolute mask.</p>
+<pre><code># this will set the netmask on drone 1 to Mask index #1
+[ "setnetmask", 1 ]
+# this will check if the netmask received in a dhcp reply received by drone 1
+# matches certain criterions of Mask index #1
+[ "checknetmask", 1 ]
+</code></pre>
+<p>Finally we have a complex call that we use as our entry point for RPC on a Drone</p>
+<pre><code># send a drone RPC call to drone 1.
+[ "drone", 1, "webui_auth", {"pass":"admin"}, 300 ],
+</code></pre>
+<h2 id="list-of-all-drone-calls">List of all drone calls</h2>
+<pre><code># dns_flood - do mass dns resolving
+[ "drone", 1, "dns_flood", ["www.google.de", "www.google.com"]
+
+# download - download a file and check its size
+[ "drone", 1, "download", {"url":"http://dev.phrozen.org/test", "repeat":"4", "size":"1048576"}, 300 ]
+
+# fatserver - simulate a fatserver call - this requires a DUT with dev mode enabled
+[ "drone", 1, "fatserver", {"host":"192.168.10.1", "payload":"json|{\"cmd\":\"setwpapassword\", \"val\":\"12345321234\" }" } ]
+
+# cloudlogin - log into a cloudspot using http redirects
+[ "drone", 1, "cloudlogin", {"user":"$cloud_user", "pass":"$cloud_pass", "host":"$cloud_url"}, 300 ]
+
+# cloudwispr - log into a cloudspot using wispr
+
+# cloudlogout - log of the cloud service
+[ "drone", 1, "cloudlogout" ]
+
+# webui_auth - tell the drone to log into the DUTs webui
+[ "drone", 1, "webui_auth", {"pass":"admin"}, 300 ]
+
+# webui_rpc - send a webui rpc call (these are identical to the ones used by the normal webui)
+[ "drone", 1, "webui_rpc", { "set":"passwd", "vals":{"passwd1":"fooooooooo" } } ],
+
+# webui_deauth - log off the webui
+[ "drone", 1, "webui_deauth" ]
+
+# webui_ip - use a different webui ip than 192.168.10.1
+[ "drone", 1, "webui_ip", {"ipaddr":"169.254.255.1"}, 300 ],
+
+# uci_dump - get
+[ "drone", 1, "uci_dump", {"package":"cloud", "section":"state", "state":1 }, 300 ],
+</code></pre>
+<p>The following calls exist but are currently unused</p>
+<ul>
+<li>getifaddrs - get a list of all netdevs inclusive the ipaddr ...</li>
+<li>readfile - read a random file from the drones FS</li>
+<li>reset - reboot the drone</li>
+<li>sysinfo - get system resource usage</li>
+<li>system - execute a random system call on the drone</li>
+<li>uci_dump - get some use values</li>
+<li>uci_replace - uci magic</li>
+<li>upgrade - FW upgrade of the Drone</li>
+</ul>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--next" href="development/setup/" rel="next" title="Test setup">
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Test setup
+              </div>
+</div>
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="assets/javascripts/vendor.f45d2d8d.min.js"></script>
+<script src="assets/javascripts/bundle.74d0b805.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.7f7c8775.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+</body>
+</html>
