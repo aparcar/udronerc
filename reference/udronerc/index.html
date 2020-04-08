@@ -362,6 +362,7 @@ assign<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 </h3>
 <div class="doc doc-contents">
 <p>Assign nodes to group</p>
+<p>The command adds nodes to a group so they </p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -462,7 +463,9 @@ assign<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 111
 112
 113
-114</pre>
+114
+115
+116</pre>
 </div>
 </td>
 <td class="code">
@@ -470,6 +473,8 @@ assign<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 <pre><span></span><code>    <span class="k">def</span> <span class="nf">assign</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_nodes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">min_nodes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">board</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"generic"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
         <span class="sd">"""</span>
 <span class="sd">        Assign nodes to group</span>
+
+<span class="sd">        The command adds nodes to a group so they </span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            max_nodes (int): maximal number of nodes required</span>
@@ -529,9 +534,7 @@ engage<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>116
-117
-118
+<pre><span></span>118
 119
 120
 121
@@ -541,7 +544,9 @@ engage<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 125
 126
 127
-128</pre>
+128
+129
+130</pre>
 </div>
 </td>
 <td class="code">
@@ -667,9 +672,7 @@ call<span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>349
-350
-351
+<pre><span></span>351
 352
 353
 354
@@ -701,7 +704,9 @@ call<span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 380
 381
 382
-383</pre>
+383
+384
+385</pre>
 </div>
 </td>
 <td class="code">
@@ -832,9 +837,7 @@ call_multi<span class="p">(</span><span class="bp">self</span><span class="p">,<
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>385
-386
-387
+<pre><span></span>387
 388
 389
 390
@@ -865,7 +868,9 @@ call_multi<span class="p">(</span><span class="bp">self</span><span class="p">,<
 415
 416
 417
-418</pre>
+418
+419
+420</pre>
 </div>
 </td>
 <td class="code">
@@ -942,14 +947,14 @@ genseq<span class="p">(</span><span class="bp">self</span><span class="p">)</spa
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>255
-256
-257
+<pre><span></span>257
 258
 259
 260
 261
-262</pre>
+262
+263
+264</pre>
 </div>
 </td>
 <td class="code">
@@ -1021,9 +1026,7 @@ get_ip_address<span class="p">(</span><span class="bp">self</span><span class="p
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>236
-237
-238
+<pre><span></span>238
 239
 240
 241
@@ -1038,7 +1041,9 @@ get_ip_address<span class="p">(</span><span class="bp">self</span><span class="p
 250
 251
 252
-253</pre>
+253
+254
+255</pre>
 </div>
 </td>
 <td class="code">
@@ -1128,9 +1133,7 @@ Group<span class="p">(</span><span class="bp">self</span><span class="p">,</span
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>456
-457
-458
+<pre><span></span>458
 459
 460
 461
@@ -1143,7 +1146,9 @@ Group<span class="p">(</span><span class="bp">self</span><span class="p">,</span
 468
 469
 470
-471</pre>
+471
+472
+473</pre>
 </div>
 </td>
 <td class="code">
@@ -1231,9 +1236,7 @@ recv<span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>279
-280
-281
+<pre><span></span>281
 282
 283
 284
@@ -1256,7 +1259,9 @@ recv<span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 301
 302
 303
-304</pre>
+304
+305
+306</pre>
 </div>
 </td>
 <td class="code">
@@ -1361,9 +1366,7 @@ recv_until<span class="p">(</span><span class="bp">self</span><span class="p">,<
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>306
-307
-308
+<pre><span></span>308
 309
 310
 311
@@ -1402,7 +1405,9 @@ recv_until<span class="p">(</span><span class="bp">self</span><span class="p">,<
 344
 345
 346
-347</pre>
+347
+348
+349</pre>
 </div>
 </td>
 <td class="code">
@@ -1515,9 +1520,7 @@ send<span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>264
-265
-266
+<pre><span></span>266
 267
 268
 269
@@ -1528,7 +1531,9 @@ send<span class="p">(</span><span class="bp">self</span><span class="p">,</span>
 274
 275
 276
-277</pre>
+277
+278
+279</pre>
 </div>
 </td>
 <td class="code">
@@ -1630,9 +1635,7 @@ whois<span class="p">(</span><span class="bp">self</span><span class="p">,</span
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>420
-421
-422
+<pre><span></span>422
 423
 424
 425
@@ -1660,7 +1663,9 @@ whois<span class="p">(</span><span class="bp">self</span><span class="p">,</span
 447
 448
 449
-450</pre>
+450
+451
+452</pre>
 </div>
 </td>
 <td class="code">
