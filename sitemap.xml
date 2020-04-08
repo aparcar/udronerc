@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
-     <loc>https://test.de/</loc>
+     <loc>https://aparcar.github.io/udronerc/</loc>
      <lastmod>2020-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://test.de/development/setup/</loc>
+     <loc>https://aparcar.github.io/udronerc/development/setup/</loc>
      <lastmod>2020-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://test.de/reference/dronegroup/</loc>
+     <loc>https://aparcar.github.io/udronerc/reference/dronegroup/</loc>
      <lastmod>2020-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://test.de/reference/dronehost/</loc>
+     <loc>https://aparcar.github.io/udronerc/reference/dronehost/</loc>
      <lastmod>2020-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://test.de/reference/modules/checkip/</loc>
+     <loc>https://aparcar.github.io/udronerc/reference/modules/checkip/</loc>
      <lastmod>2020-04-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
