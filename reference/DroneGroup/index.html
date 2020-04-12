@@ -5,10 +5,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="https://aparcar.github.io/udronerc/reference/dronegroup/" rel="canonical"/>
+<link href="https://aparcar.github.io/udronerc/reference/DroneGroup/" rel="canonical"/>
 <link href="../../assets/images/favicon.png" rel="shortcut icon"/>
 <meta content="mkdocs-1.1, mkdocs-material-5.0.1" name="generator"/>
-<title>Dronegroup - udrone</title>
+<title>DroneGroup - udrone</title>
 <link href="../../assets/stylesheets/main.c3000690.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -19,7 +19,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#udronerc.dronegroup">
+<a class="md-skip" href="#udronerc.dronegroup.DroneGroup">
           Skip to content
         </a>
 </div>
@@ -40,7 +40,7 @@
           </span>
 <span class="md-header-nav__topic md-ellipsis">
             
-              Dronegroup
+              DroneGroup
             
           </span>
 </div>
@@ -111,6 +111,11 @@
       </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../development/calls/" title="Testing calls">
+      Testing calls
+    </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../development/setup/" title="Test setup">
       Test setup
     </a>
@@ -137,13 +142,13 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-        Dronegroup
+        DroneGroup
         <span class="md-nav__icon md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z"></path></svg>
 </span>
 </label>
-<a class="md-nav__link md-nav__link--active" href="./" title="Dronegroup">
-      Dronegroup
+<a class="md-nav__link md-nav__link--active" href="./" title="DroneGroup">
+      DroneGroup
     </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -154,28 +159,19 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#udronerc.dronegroup">
-    udronerc.dronegroup
+<a class="md-nav__link" href="#udronerc.dronegroup.DroneGroup">
+    udronerc.dronegroup.DroneGroup
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#udronerc.dronegroup.DroneGroup">
-    DroneGroup
+<a class="md-nav__link" href="#udronerc.dronegroup.DroneGroup.__init__">
+    __init__()
   </a>
-<nav aria-label="DroneGroup" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#udronerc.dronegroup.DroneGroup.assign">
     assign()
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#udronerc.dronegroup.DroneGroup.engage">
-    engage()
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -229,28 +225,19 @@
     </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#udronerc.dronegroup">
-    udronerc.dronegroup
+<a class="md-nav__link" href="#udronerc.dronegroup.DroneGroup">
+    udronerc.dronegroup.DroneGroup
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#udronerc.dronegroup.DroneGroup">
-    DroneGroup
+<a class="md-nav__link" href="#udronerc.dronegroup.DroneGroup.__init__">
+    __init__()
   </a>
-<nav aria-label="DroneGroup" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#udronerc.dronegroup.DroneGroup.assign">
     assign()
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#udronerc.dronegroup.DroneGroup.engage">
-    engage()
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -259,27 +246,24 @@
 </div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
-<h1>Dronegroup</h1>
-<p>The DroneGroup class stores client drones and offer functions to commands on
-all drones of a group.</p>
-<div class="doc doc-object doc-module">
-<h2 class="hidden-toc" href="#udronerc.dronegroup" id="udronerc.dronegroup" style="visibility: hidden; width: 0; height: 0;">
+<h1>DroneGroup</h1>
+<div class="doc doc-object doc-class">
+<h2 class="hidden-toc" href="#udronerc.dronegroup.DroneGroup" id="udronerc.dronegroup.DroneGroup" style="visibility: hidden; width: 0; height: 0;">
 </h2>
 <div class="doc doc-contents first">
-<div class="doc doc-children">
-<div class="doc doc-object doc-class">
-<h2 class="doc doc-heading" id="udronerc.dronegroup.DroneGroup">
-<code>DroneGroup</code>
-</h2>
-<div class="doc doc-contents">
+<p>The DroneGroup class stores active drones and run commands</p>
+<p>A drone group contains drones to run tests of a specific suite. It offers
+   functions to assign new drones and run commands of all assigned drones.</p>
 <div class="doc doc-children">
 <div class="doc doc-object doc-method">
-<h3 class="doc doc-heading" id="udronerc.dronegroup.DroneGroup.assign">
+<h2 class="doc doc-heading" id="udronerc.dronegroup.DroneGroup.__init__">
 <code class="highlight language-python">
-assign<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">max_nodes</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">min_nodes</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">board</span><span class="o">=</span><span class="s1">'generic'</span><span class="p">)</span> </code>
-</h3>
+__init__<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">groupid</span><span class="p">)</span> </code>
+<span class="doc doc-properties">
+<small class="doc doc-property doc-property-special"><code>special</code></small>
+</span>
+</h2>
 <div class="doc doc-contents">
-<p>Assign nodes to group</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -292,18 +276,104 @@ assign<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 </thead>
 <tbody>
 <tr>
-<td><code>max_nodes</code></td>
-<td><code>int</code></td>
+<td><code>host</code></td>
+<td><code>DroneHost</code></td>
 <td>
-<p>maximal number of nodes required</p>
+<p>Initialized drone host</p>
 </td>
-<td><code>1</code></td>
+<td><em>required</em></td>
 </tr>
 <tr>
-<td><code>min_nodes</code></td>
+<td><code>groupid</code></td>
+<td><code>str</code></td>
+<td>
+<p>Unique identifier for the group</p>
+</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Source code in <code>udronerc/dronegroup.py</code></summary>
+<table class="highlighttable">
+<tr>
+<td class="linenos">
+<div class="linenodiv">
+<pre><span></span>20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</pre>
+</div>
+</td>
+<td class="code">
+<div class="highlight">
+<pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">host</span><span class="p">,</span> <span class="n">groupid</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Args:</span>
+<span class="sd">        host (DroneHost): Initialized drone host</span>
+<span class="sd">        groupid (str): Unique identifier for the group</span>
+<span class="sd">    """</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">host</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">groupid</span> <span class="o">=</span> <span class="n">groupid</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">idle_intval</span> <span class="o">=</span> <span class="n">UDRONE_IDLE_INTVAL</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">timer</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">_timer_setup</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">seq</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">genseq</span><span class="p">()</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assigned_drones</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Group </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">groupid</span><span class="si">}</span><span class="s2"> created."</span><span class="p">)</span>
+</code></pre>
+</div>
+</td>
+</tr>
+</table>
+</details>
+</div>
+</div>
+<div class="doc doc-object doc-method">
+<h2 class="doc doc-heading" id="udronerc.dronegroup.DroneGroup.assign">
+<code class="highlight language-python">
+assign<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">min_drones</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">max_drones</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">board</span><span class="o">=</span><span class="s1">'generic'</span><span class="p">)</span> </code>
+</h2>
+<div class="doc doc-contents">
+<p>Assign new drones to a group</p>
+<p>Assigning works by sending a <code>!whois</code> broadcast message and wait for
+the responses of unassigned drones. A number of drones between
+<code>max_drones</code> and <code>min_drones</code> is then tried to assign, meaning the drones
+wont respond to other requests for that time.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_drones</code></td>
 <td><code>int</code></td>
 <td>
-<p>mimimal number of nodes required</p>
+<p>Maximal number of drones required</p>
+</td>
+<td><code>None</code></td>
+</tr>
+<tr>
+<td><code>min_drones</code></td>
+<td><code>int</code></td>
+<td>
+<p>Mimimal number of drones required</p>
 </td>
 <td><code>1</code></td>
 </tr>
@@ -311,7 +381,7 @@ assign<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 <td><code>board</code></td>
 <td><code>str</code></td>
 <td>
-<p>limit assignment to specific board</p>
+<p>Limit assignment to specific board</p>
 </td>
 <td><code>'generic'</code></td>
 </tr>
@@ -329,7 +399,7 @@ assign<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 <tr>
 <td><code>list</code></td>
 <td>
-<p>list: new member os group</p>
+<p>list: New member of group</p>
 </td>
 </tr>
 </tbody>
@@ -340,91 +410,109 @@ assign<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 <tr>
 <td class="linenos">
 <div class="linenodiv">
-<pre><span></span>37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79</pre>
+<pre><span></span> 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</pre>
 </div>
 </td>
 <td class="code">
 <div class="highlight">
 <pre><span></span><code><span class="k">def</span> <span class="nf">assign</span><span class="p">(</span>
-    <span class="bp">self</span><span class="p">,</span> <span class="n">max_nodes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">min_nodes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">board</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"generic"</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">min_drones</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">max_drones</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">board</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"generic"</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="sd">"""</span>
-<span class="sd">    Assign nodes to group</span>
+    <span class="sd">"""Assign new drones to a group</span>
+
+<span class="sd">    Assigning works by sending a `!whois` broadcast message and wait for</span>
+<span class="sd">    the responses of unassigned drones. A number of drones between</span>
+<span class="sd">    `max_drones` and `min_drones` is then tried to assign, meaning the drones</span>
+<span class="sd">    wont respond to other requests for that time.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        max_nodes (int): maximal number of nodes required</span>
-<span class="sd">        min_nodes (int): mimimal number of nodes required</span>
-<span class="sd">        board (str): limit assignment to specific board</span>
+<span class="sd">        max_drones (int): Maximal number of drones required</span>
+<span class="sd">        min_drones (int): Mimimal number of drones required</span>
+<span class="sd">        board (str): Limit assignment to specific board</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        list: new member os group</span>
+<span class="sd">        list: New member of group</span>
 <span class="sd">    """</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Assign </span><span class="si">{</span><span class="n">min_drones</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">max_drones</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">board</span><span class="si">}</span><span class="s2"> drones to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">groupid</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 
-    <span class="c1">#        ingroup = self.host.whois(self.groupid, max_nodes, board=board)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">max_drones</span><span class="p">:</span>
+        <span class="n">max_drones</span> <span class="o">=</span> <span class="n">min_drones</span>
+
+    <span class="c1">#        ingroup = self.host.whois(self.groupid, max_drones, board=board)</span>
     <span class="c1">#        print(ingroup)</span>
 
-    <span class="c1">#        if max_nodes &gt;= len(ingroup) &gt;= min_nodes:</span>
+    <span class="c1">#        if max_drones &gt;= len(ingroup) &gt;= min_drones:</span>
     <span class="c1">#            return list(ingroup.keys())</span>
 
     <span class="n">available</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">whois</span><span class="p">(</span><span class="n">UDRONE_GROUP_DEFAULT</span><span class="p">,</span> <span class="n">max_nodes</span><span class="p">,</span> <span class="n">board</span><span class="o">=</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-    <span class="p">)[:</span><span class="n">max_nodes</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">whois</span><span class="p">(</span><span class="n">UDRONE_GROUP_DEFAULT</span><span class="p">,</span> <span class="n">max_drones</span><span class="p">,</span> <span class="n">board</span><span class="o">=</span><span class="n">board</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+    <span class="p">)[:</span><span class="n">max_drones</span><span class="p">]</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"asdf"</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">available</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_nodes</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">available</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_drones</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">DroneNotFoundError</span><span class="p">((</span><span class="n">ENOENT</span><span class="p">,</span> <span class="s2">"You must construct additional drones"</span><span class="p">))</span>
 
-    <span class="n">new_members</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engage</span><span class="p">(</span><span class="n">available</span><span class="p">)</span>
+    <span class="n">new_members</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assign_drones</span><span class="p">(</span><span class="n">available</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_nodes</span><span class="p">:</span>
-        <span class="n">max_nodes</span> <span class="o">-=</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span>
-        <span class="n">available</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">whois</span><span class="p">(</span><span class="n">UDRONE_GROUP_DEFAULT</span><span class="p">,</span> <span class="n">max_nodes</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span>
-            <span class="p">:</span><span class="n">max_nodes</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_drones</span><span class="p">:</span>
+        <span class="n">max_drones</span> <span class="o">-=</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span>
+        <span class="n">available</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">whois</span><span class="p">(</span><span class="n">UDRONE_GROUP_DEFAULT</span><span class="p">,</span> <span class="n">max_drones</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span>
+            <span class="p">:</span><span class="n">max_drones</span>
         <span class="p">]</span>
-        <span class="n">new_members</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">engage</span><span class="p">(</span><span class="n">available</span><span class="p">)</span>
+        <span class="n">new_members</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assign_drones</span><span class="p">(</span><span class="n">available</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_nodes</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_drones</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Rollback</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">call_multi</span><span class="p">(</span><span class="n">new_members</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"!reset"</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"status"</span><span class="p">)</span>
         <span class="k">raise</span> <span class="n">DroneNotFoundError</span><span class="p">((</span><span class="n">ENOENT</span><span class="p">,</span> <span class="s2">"You must construct additional drones"</span><span class="p">))</span>
@@ -436,64 +524,6 @@ assign<span class="p">(</span><span class="bp">self</span><span class="p">,</spa
 </tr>
 </table>
 </details>
-</div>
-</div>
-<div class="doc doc-object doc-method">
-<h3 class="doc doc-heading" id="udronerc.dronegroup.DroneGroup.engage">
-<code class="highlight language-python">
-engage<span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">)</span> </code>
-</h3>
-<div class="doc doc-contents">
-<p>Invite nodes by ID</p>
-<details class="quote">
-<summary>Source code in <code>udronerc/dronegroup.py</code></summary>
-<table class="highlighttable">
-<tr>
-<td class="linenos">
-<div class="linenodiv">
-<pre><span></span>81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95</pre>
-</div>
-</td>
-<td class="code">
-<div class="highlight">
-<pre><span></span><code><span class="k">def</span> <span class="nf">engage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nodes</span><span class="p">):</span>
-    <span class="sd">"""Invite nodes by ID</span>
-
-<span class="sd">    """</span>
-    <span class="n">ans</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">call_multi</span><span class="p">(</span>
-        <span class="n">nodes</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"!assign"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"group"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">groupid</span><span class="p">,</span> <span class="s2">"seq"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">seq</span><span class="p">},</span> <span class="s2">"status"</span>
-    <span class="p">)</span>
-    <span class="n">members</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">member</span><span class="p">,</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">ans</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">member</span><span class="p">,</span> <span class="n">answer</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">answer</span><span class="p">[</span><span class="s2">"data"</span><span class="p">][</span><span class="s2">"code"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">members</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">member</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">members</span><span class="p">)</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">members</span> <span class="o">|=</span> <span class="nb">set</span><span class="p">(</span><span class="n">members</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">members</span>
-</code></pre>
-</div>
-</td>
-</tr>
-</table>
-</details>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
