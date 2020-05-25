@@ -26,36 +26,39 @@ def checkip(
     logger.debug(
         f"{interface=} {check_ipv4=} {check_ipv6=} {specific_ipv4=} {specific_ipv6=}"
     )
-    success = {}
+
     responses = group.call(
         "ubus", {"path": f"network.interface.{interface}", "method": "dump"}
     )
-    for response in responses:
-        success[response["from"]] = True
+
+    for drone, response in responses.items():
+        if response["status"] != "ok":
+            continue
+
         if check_ipv4:
             ipv4_addresses = response["data"].get("ipv4-address", [])
             if not specific_ipv4:
                 if len(ipv4_addresses) > 0:
-                    success[response["from"]] = False
+                    response["status"] = "failed"
             else:
                 found = False
                 for ip in ipv4_addresses:
                     if ip["address"] == specific_ipv4:
                         found = True
                 if not found:
-                    success[response["from"]] = False
+                    response["status"] = "failed"
 
         if check_ipv6:
             ipv6_addresses = response["data"].get("ipv6-address", [])
             if not specific_ipv6:
                 if len(ipv6_addresses) > 0:
-                    success[response["from"]] = False
+                    response["status"] = "failed"
             else:
                 found = False
                 for ip in ipv6_addresses:
                     if ip["address"] == specific_ipv6:
                         found = True
                 if not found:
-                    success[response["from"]] = False
+                    response["status"] = "failed"
 
-    return success
+    return responses
