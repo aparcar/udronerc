@@ -3,6 +3,7 @@ import time
 from pathlib import Path
 
 import yaml
+import json
 
 from .dronegroup import DroneGroup
 from .dronehost import DroneHost
@@ -28,7 +29,7 @@ def replace_tags(msg: str, data: dict):
     return msg.format(*data)
 
 
-def host_sleep(seconds: int = 5):
+def host_sleep(seconds: int = 5, comment: str = None):
     """
     Sleep for N seconds
 
@@ -36,7 +37,10 @@ def host_sleep(seconds: int = 5):
         group
         seconds: Seconds to sleep
     """
-    logger.info(f"HOST SLEEP {seconds}")
+    msg = f"ok: [host]: sleep {seconds}s"
+    if comment:
+        msg += f' => "{comment}"'
+    print(msg)
     time.sleep(seconds)
 
 
@@ -57,8 +61,7 @@ def host_raw(cmd):
 
 def uci_set(group: DroneGroup, data: dict, commit: bool = True):
     responses = group.call("uci_set", data)
-    for response in responses:
-        logger.debug(f"{response}")
+    print(responses)
 
     return responses
 
@@ -82,16 +85,11 @@ def sysinfo(group: DroneGroup):
 
 
 def read_file(group: DroneHost, path, base64=False):
-    responses = (
-        group.call(
-            "ubus",
-            {
-                "path": "file",
-                "method": "read",
-                "param": {"path": path, "base64": base64},
-            },
-        ),
+    responses = group.call(
+        "ubus",
+        {"path": "file", "method": "read", "param": {"path": path, "base64": base64},},
     )
+
     return responses
 
 
@@ -139,9 +137,19 @@ cmds_drone_set = set(cmds_drone.keys())
 cmds_host_set = set(cmds_host.keys())
 
 
+def print_results(results):
+    for drone, result in results.items():
+        msg = f"{result['status']}: [{drone}]"
+        if result.get("data"):
+            msg += " => "
+            msg += json.dumps(result["data"], indent=4, sort_keys=True)
+        print(msg)
+
+
 def run_task(group, task: dict):
     cmd_set = set(task.keys()) & (cmds_drone_set ^ cmds_host_set)
     logger.debug(f"{cmd_set=}")
+
     if len(cmd_set) > 1:
         logger.error("Only one command per task allowed")
         quit(1)
@@ -152,18 +160,21 @@ def run_task(group, task: dict):
 
     cmd = cmd_set.pop()
     desc = task.get("name", cmd)
-    logger.info(f"Running task {desc}")
+    logger.info(f"TASK [{desc}]")
 
     if cmd.startswith("host"):
         if task[cmd]:
-            return cmds_host[cmd](**task[cmd])
+            cmds_host[cmd](**task[cmd])
         else:
-            return cmds_host[cmd]()
+            cmds_host[cmd]()
     else:
         if task[cmd]:
-            return cmds_drone[cmd](group, **task[cmd])
+            results = cmds_drone[cmd](group, **task[cmd])
         else:
-            return cmds_drone[cmd](group)
+            results = cmds_drone[cmd](group)
+
+        print_results(results)
+        return results
 
 
 def run_suite(host: DroneHost, path: str):
@@ -184,7 +195,7 @@ def run_suite(host: DroneHost, path: str):
 
     loop_end = suite.get("repeat", 1) + 1
     for i in range(loop_end):
-        logger.info(f"START {suite['id']} - {suite['name']} [{i}/{loop_end}]")
+        logger.info(f"PLAY {suite['id']} - {suite['name']} [{i}/{loop_end}]")
         for task in suite["tasks"]:
             results.append((task, run_task(group, task)))
 

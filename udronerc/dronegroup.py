@@ -134,7 +134,8 @@ class DroneGroup(object):
         self.host.reset(self.groupid, reset, expect)
         self.assigned_drones = expect
         if len(expect) > 0:
-            raise DroneNotReachableError((ETIMEDOUT, "Request Timeout", expect))
+            logger.error("Request Timeout")
+            quit(1)
 
     def request(self, msg_type, data=None, timeout=60):
 
@@ -179,27 +180,32 @@ class DroneGroup(object):
             self._timer_setup()
         return answers
 
-    def call(self, msg_type, data=None, timeout=60, update=None):
+    def call(self, msg_type, data=None, timeout=60, result={}):
+        result.update(self.request(msg_type, data, timeout))
 
-        res = self.request(msg_type, data, timeout)
-        if update:
-            update.update(res)
-        for drone, answer in res.items():
-            if not answer:  # Some drone didn't answer
-                raise DroneNotReachableError((ETIMEDOUT, "Request Timeout", [drone]))
-            if drone not in self.assigned_drones:  # Some unknown drone answered
-                raise DroneConflict([drone])
+        for drone, answer in result.items():
+            if not answer:
+                logger.warning(f"Unreachable drone {drone}")
+                result[drone]["status"] = "unreachable"
+                continue
+
+            if drone not in self.assigned_drones:
+                logger.warning(f"Unknown drone {drone} responded")
+                continue
+
             if answer["type"] == "unsupported":
-                raise DroneRuntimeError((EOPNOTSUPP, "Unknown Command", drone))
-            try:
-                if answer["type"] == "status" and answer["data"]["code"] > 0:
-                    errstr = answer["data"].get("errstr")
-                    errcode = answer["data"]["code"]
-                    logger.error(f"drone {drone} responded with {errcode}: {errstr}")
-                    quit(1)
-            except Exception as e:
-                if isinstance(e, DroneRuntimeError):
-                    raise e
-                else:
-                    raise DroneRuntimeError((EPROTO, "Invalid Status Reply", drone))
-        return update if update else res
+                logger.warning(f"Unsupported call for {drone}")
+                result[drone]["status"] = "unsupported"
+                continue
+
+            if answer.get("type") ==  "status":
+                if answer.get("data", {}).get("code", 0) > 0:
+                    errstr = answer.get("data", {}).get("errstr")
+                    errcode = answer.get("data", {}).get("code")
+                    logger.warning(f"drone {drone} responded with {errcode}: {errstr}")
+                    result[drone]["status"] = "failed"
+                    continue
+
+            result[drone]["status"] = "ok"
+
+        return result

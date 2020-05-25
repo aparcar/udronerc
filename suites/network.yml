@@ -2,20 +2,12 @@ name: Basic DHCP test
 id: basic_dhcp
 drones_min: 1
 drones_max: 1
-repeat: 2
+repeat: 0
 board: generic
 tasks:
   - name: Sysinfo
     sysinfo: {}
 
-  - name: Print resolv.conf
-    read_file:
-      path: /tmp/resolv.conf
-
-  - checkip:
-      interface: lan
-      check_ipv4: True
-  
   - name: Set UCI configuration
     uci_set:
       data:
@@ -28,11 +20,19 @@ tasks:
             netmask: 255.255.255.0
             proto: static
 
+  - name: Print resolv.conf
+    read_file:
+      path: /tmp/resolv.conf
+  
+  - checkip:
+      interface: lan
+      check_ipv4: True
+
   - host_sleep:
-      seconds: 2
+      comment: Sleep just for testing
+      seconds: 5
 
   - name: Restart dhcp/network
     service:
       name: network
       action: restart
-
