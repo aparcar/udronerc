@@ -1,4 +1,4 @@
 address: 192.168.1.2
 ifname:  eth0 # the interface used to talk to the drones
-hostid: th
+hostid: th # testhost
 log_level: INFO

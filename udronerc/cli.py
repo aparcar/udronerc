@@ -9,6 +9,9 @@ import udronerc.udronerc
 
 from udronerc.constants import UDRONE_GROUP_DEFAULT
 
+logger = logging.getLogger(__name__)
+
+
 with open("config.yml") as c:
     conf = yaml.safe_load(c.read())
 
@@ -17,12 +20,27 @@ logger = logging.getLogger(__name__)
 
 
 @click.group()
-def cli():
+@click.option(
+    "-c",
+    "--config",
+    "option_config",
+    default="config.yml",
+    type=Path,
+    help="Path to config.yml",
+)
+def cli(option_config):
+    config_path = Path(option_config)
+    if not config_path.is_file():
+        logger.error(f"No config file found at {option_config}")
+        quit(1)
+
+    conf = yaml.safe_load(config_path.read_text())
+    logging.basicConfig(level=conf["log_level"])
     logger.info("Starting CLI")
 
 
 @cli.command()
-@click.option("--board", default="generic", help="Limit to specific board type")
+@click.option("-b", "--board", default="generic", help="Limit to specific board type")
 def whois(board):
     """Return number and names of all active drones"""
     whois = list(udronerc.udronerc.whois(UDRONE_GROUP_DEFAULT, board).keys())
