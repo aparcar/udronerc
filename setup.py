@@ -15,7 +15,7 @@ with open(join(base_path, "requirements.txt")) as req_file:
 setup(
     name="udronerc",
     version="0.0.1",
-    url="https://github.com/blogic/udrone",
+    url="https://github.com/aparcar/udronerc",
     maintainer="Paul Spooren",
     maintainer_email="mail@aparcar.org",
     description="udrone Remote Control",

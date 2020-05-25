@@ -9,8 +9,7 @@ import struct
 import time
 import fcntl
 
-from .constants import *
-from .errors import *
+from .constants import UDRONE_ADDR, UDRONE_RESENT_STRATEGY, UDRONE_MAX_DGRAM
 from .dronegroup import DroneGroup
 
 logger = logging.getLogger(__name__)

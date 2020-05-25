@@ -7,7 +7,7 @@ import yaml
 
 import udronerc.udronerc
 
-from udronerc.constants import *
+from udronerc.constants import UDRONE_GROUP_DEFAULT
 
 with open("config.yml") as c:
     conf = yaml.safe_load(c.read())
@@ -36,18 +36,18 @@ def disband():
 
 @cli.group()
 def suite():
-    """suite related commands"""
+    """Suite related commands"""
     pass
 
 
 @suite.command()
 @click.argument("path")
 def run(path):
-    """Run suite at given path"""
+    """Run test suite at given path"""
     host = udronerc.udronerc.get_host()
     results_suite = udronerc.udronerc.run_suite(host, path)
     Path("results.json").write_text(json.dumps(results_suite, indent="  "))
-    logger.info(f"Stored suite results to results.json")
+    logger.info("Stored suite results to results.json")
 
 
 if __name__ == "__main__":

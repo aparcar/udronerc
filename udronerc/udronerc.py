@@ -1,7 +1,4 @@
-import json
 import logging
-import os
-import sys
 import time
 from pathlib import Path
 
@@ -9,7 +6,6 @@ import yaml
 
 from .dronegroup import DroneGroup
 from .dronehost import DroneHost
-from .errors import DroneRuntimeError
 from .modules.checkip import checkip
 
 with open("config.yml") as c:
@@ -57,24 +53,6 @@ def host_comment(msg: str):
 def host_raw(cmd):
     logger.info(f"HOST SCRIPT {cmd}")
     logger.warning(f"HOST SCRIPT {cmd} - not yet implented")  # TODO
-
-
-# this command can be prepended to any other command. it simply inverts the result
-def cmd_fail(v, c):
-    if cmd_map[v[1]] is not None:
-        try:
-            cmd_map[v[1]](v[1:], c)
-        except:
-            logger.debug("INVERT we expected this command to fail which it did")
-            return 0
-        logger.debug("ERROR command was supposed to fail")
-        raise ExceptionClass(1000, "command should have failed", "foo")
-
-
-# this command executes a shell script. if the script returns 0 we assume all is well
-
-
-cmds_meta = set(["local", "must_fail" "name"])
 
 
 def uci_set(group: DroneGroup, data: dict, commit: bool = True):
@@ -175,7 +153,7 @@ def run_task(group, task: dict):
     cmd = cmd_set.pop()
     desc = task.get("name", cmd)
     logger.info(f"Running task {desc}")
-    results = []
+
     if cmd.startswith("host"):
         if task[cmd]:
             return cmds_host[cmd](**task[cmd])
@@ -213,106 +191,23 @@ def run_suite(host: DroneHost, path: str):
     logger.info(f"Reset group {suite['id']}")
     group.reset()
 
-    fail = 0
-    if fail > 0:
-        raise ExceptionClass(1000, f"{fail:d} iterations failed", "foo")
-
     return results
-
-
-def validate_task(task, cmds_available):
-    task = task.copy()
-    for meta_cmd in meta_cmds:
-        task.pop(meta_cmd, None)
-
-    if len(task_data.keys()) > 1:
-        raise ExceptionClass(1000, "More than one task identifier provided!", "foo")
-    elif len(task.keys()) == 0:
-        raise ExceptionClass(1000, "No task identifier provided!", "foo")
-
-    if task.keys()[0] not in cmds_available:
-        raise ExceptionClass(1000, "Unknown task identifier provided!", "foo")
-
-    task_id = task_data.keys()[0]
-
-    return task_id, task[task_id]
-
-
-def run_task_drone(task):
-    """
-    Run a task remotely on udrone
-
-    Args:
-        task (dict): Task to run on drone
-    """
-    task_id, task_data = validate_task(task, cmds_drone)
-
-    # TODO validate task args
-
-    # per default we wait 10s for a reply
-    timeout = 10
-    # if a timeout value was passed, use it instead of the default
-    if len(v) == 5:
-        timeout = v[4]
-    # check if the call has a payload
-    if len(v) < 4:
-        # no payload so do a flat call
-        logger.debug('DRONE calling "' + v[2] + '"')
-        return drone[v[1] - 1].call(v[2])
-    else:
-        # there is a payload, substitue global vars and iteration coutners
-        payload = replace_tags(v[3], c)
-        # issue the actual command
-        logger.debug('DRONE calling "' + v[2] + '":' + json.dumps(payload))
-        return drone[v[1] - 1].call(v[2], payload, task.get("timeout", 10))
-
-    return cmd_drone
 
 
 def load_suite(path: str) -> dict:
     suite_path = Path(path)
-    assert suite_path.is_file(), "Config file not found"
+    if not suite_path.is_file():
+        logger.error(f"Config file {path} not found")
+        quit(1)
 
-    # do some validation
+    # TODO do some validation
 
     return yaml.safe_load(suite_path.read_text())
 
 
 def disband():
-    host.disband()
+    get_host().disband()
 
 
 def whois(group, board):
-    host = get_host()
-    return host.whois(group, board=board)
-
-
-#        logger.debug("ERROR no drones defined")
-#
-## iterate over the tests
-# success = 0
-# count = 0
-# for t in test["test"]:
-#    count = count + 1
-#    try:
-#        run_test(t)
-#        logger.debug(f"PASS {count:d} " + test["id"])
-#        success = success + 1
-#        if t["sleep"]:
-#            logger.debug(f"SLEEP {t['sleep']:d}")
-#            time.sleep(t["sleep"])
-#    except:
-#        logger.debug(f"FAIL exception running {count:d} " + test["id"])
-#        logger.debug(sys.exc_info())
-#        time.sleep(5)
-# d = 0
-# while d < drone_count:
-#    logger.debug(f"DRONE reset unit {d:d}")
-#    cmd_drone(["DRONE", d, "!reset"], 1)
-#    d = d + 1
-#
-# result = "FAIL"
-# if success == len(test["test"]):
-#    result = "PASS"
-#
-# logger.debug("RESULT " + result + f" {success:d}/{len(test['test']):d}")
+    return get_host().whois(group, board=board)

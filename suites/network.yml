@@ -6,7 +6,7 @@ repeat: 2
 board: generic
 tasks:
   - name: Sysinfo
-    sysinfo:
+    sysinfo: {}
 
   - name: Print resolv.conf
     read_file:
