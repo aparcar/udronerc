@@ -7,6 +7,8 @@ import yaml
 
 import udronerc.udronerc
 
+from udronerc.constants import *
+
 with open("config.yml") as c:
     conf = yaml.safe_load(c.read())
 
@@ -17,6 +19,14 @@ logger = logging.getLogger(__name__)
 @click.group()
 def cli():
     logger.info("Starting CLI")
+
+
+@cli.command()
+@click.option("--board", default="generic", help="Limit to specific board type")
+def whois(board):
+    """Return number and names of all active drones"""
+    whois = list(udronerc.udronerc.whois(UDRONE_GROUP_DEFAULT, board).keys())
+    logger.info(f"Active drones ({len(whois)}): {whois}")
 
 
 @cli.command()

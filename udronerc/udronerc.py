@@ -282,6 +282,11 @@ def disband():
     host.disband()
 
 
+def whois(group, board):
+    host = get_host()
+    return host.whois(group, board=board)
+
+
 #        logger.debug("ERROR no drones defined")
 #
 ## iterate over the tests
