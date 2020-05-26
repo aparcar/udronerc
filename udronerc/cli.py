@@ -9,9 +9,6 @@ import udronerc.udronerc
 
 from udronerc.constants import UDRONE_GROUP_DEFAULT
 
-logger = logging.getLogger(__name__)
-
-
 with open("config.yml") as c:
     conf = yaml.safe_load(c.read())
 

@@ -40,7 +40,7 @@ def host_sleep(seconds: int = 5, comment: str = None):
     msg = f"ok: [host]: sleep {seconds}s"
     if comment:
         msg += f' => "{comment}"'
-    print(msg)
+    logger.info(msg)
     time.sleep(seconds)
 
 
@@ -61,7 +61,6 @@ def host_raw(cmd):
 
 def uci_set(group: DroneGroup, data: dict, commit: bool = True):
     responses = group.call("uci_set", data)
-    print(responses)
 
     return responses
 
@@ -81,6 +80,11 @@ def service(group: DroneGroup, name: str, action: str):
 
 def sysinfo(group: DroneGroup):
     responses = group.call("sysinfo")
+    return responses
+
+
+def system(group: DroneGroup, cmd, stdin=[""]):
+    responses = group.call("system", dict(cmd=cmd, stdin=stdin))
     return responses
 
 
@@ -112,7 +116,7 @@ cmds_drone = {
     "readfile": {},
     "setmask": {},
     "sysinfo": sysinfo,
-    "system": lambda x: x.call("ubus", {"path": "system", "method": "board"}),
+    "system": system,
     "ubus": {},
     "service": service,
     "ubus_call": {},
@@ -143,7 +147,7 @@ def print_results(results):
         if result.get("data"):
             msg += " => "
             msg += json.dumps(result["data"], indent=4, sort_keys=True)
-        print(msg)
+        logger.info(msg)
 
 
 def run_task(group, task: dict):

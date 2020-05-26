@@ -1,0 +1,10 @@
+name: Simple uptime test
+id: uptime
+drones_min: 1
+drones_max: 1
+repeat: 0
+board: generic
+tasks:
+  - name: Get drone uptime
+    system:
+      cmd: ["/usr/bin/uptime"]
